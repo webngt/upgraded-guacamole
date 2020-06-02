@@ -15,6 +15,7 @@ snap install microk8s --classic --channel=1.18/stable
 
 # Darwin specific accroding to documentation
 [[ $platform = "Darwin" ]] && multipass exec microk8s-vm1 -- sudo iptables -P FORWARD ACCEPT
+[[ $platform = "Linux-katacoda" ]] && sudo iptables -P FORWARD ACCEPT
 
 microk8s status --wait-ready
 microk8s enable dns storage metrics-server prometheus ingress dashboard jaeger
