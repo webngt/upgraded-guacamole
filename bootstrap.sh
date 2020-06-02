@@ -18,5 +18,5 @@ snap install microk8s --classic --channel=1.18/stable
 [[ $platform = "Linux-katacoda" ]] && sudo iptables -P FORWARD ACCEPT
 
 microk8s status --wait-ready
-[[ $platform = "Linux-katacoda" ]] && microk8s enable dns storage metrics-server ingress dashboard
+[[ $platform = "Linux-katacoda" ]] && microk8s enable dns storage metrics-server dashboard
 [[ $platform = "Darwin" ]] && microk8s enable dns storage metrics-server prometheus ingress dashboard jaeger
